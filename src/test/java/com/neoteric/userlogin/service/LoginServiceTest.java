@@ -19,18 +19,30 @@ class LoginServiceTest {
         Assertions.assertEquals("Login successful", logInSuccess);
     }
 
+//    @Test
+//    public void unsuccessful() {
+//        LoginDetails loginDetails = new LoginDetails();
+//        loginDetails.userName = "Chandra";
+//        loginDetails.passWord = "Incorrect Password";
+//        LoginService service = new LoginService();
+//        String logInFail="";
+//        for (int i = 0; i <= 4; i++) {
+//            logInFail = service.getLogged(loginDetails);
+//        }
+//            Assertions.assertEquals("Login Unsuccessful", logInFail);
+//        }
     @Test
-    public void unsuccessful() {
-        LoginDetails loginDetails = new LoginDetails();
-        loginDetails.userName = "Chandra";
-        loginDetails.passWord = "Incorrect Password";
-        LoginService service = new LoginService();
-        String logInFail="";
-        for (int i = 0; i <= 4; i++) {
-             logInFail = service.getLogged(loginDetails);
-        }
-        Assertions.assertEquals("account is blocked", logInFail);
-        System.out.println(logInFail);
+       // Assertions.assertEquals("Login Unsuccessful", logInFail);
+        public void block() {
+            LoginDetails loginDetails = new LoginDetails();
+            loginDetails.userName = "Chandra";
+            loginDetails.passWord = "Incorrect Password";
+            LoginService service = new LoginService();
+            String loginblock="";
+            for (int i = 0; i <= 4; i++) {
+                loginblock = service.getLogged(loginDetails);
+            }
+                Assertions.assertEquals("account is blocked", loginblock);
 
     }
 }
